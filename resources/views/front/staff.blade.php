@@ -9,7 +9,7 @@
                
             </div>
               <div >
-                  <form>
+                  <form >
                     <div class="col-md-5 col-lg-5 col-sm-12" style="padding: 20px;">                
                       <div class="form-group">
                           <select class="form-control form-control-lg" id="employeenumber" onChange="getName();">
@@ -64,6 +64,7 @@
       else{
         var se='/staffotp/';
         var url1=se+sel;
+        //alert(url1);
         $.ajax({
                type:'POST',
                url:url1,

@@ -23,7 +23,8 @@ Route::get('/cronaevent', function () {
 Route::get('/staff', 'AseStaffController@index');
 Route::post('/staffname/{id}', array('as' => '.staffname', 'uses' => 'AseStaffController@findname'));
 Route::post('/staffotp/{id}', array('as' => '.staffotp', 'uses' => 'AseStaffController@staffotp')); 
-Route::get('/mailtest', 'AseStaffController@mailtest');
+
+//Route::get('/mailtest', 'AseStaffController@mailtest');
 
 
 

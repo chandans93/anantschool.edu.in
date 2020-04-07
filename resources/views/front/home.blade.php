@@ -1,20 +1,22 @@
 @extends('front.frontmaster')
 @section('content')
-
-
 <div class="inner-bg">
        <div class="container">
+         @if ($message = Session::get('success'))
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-body">
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">X</button>
+                        <h4><i class="icon fa fa-check"></i>{{ $message }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
           <div class="row">
               <div class="col-md-3 col-lg-3 ">
-                <?php 
-if(isset($successmessage) && !empty($successmessage)) 
-{
-echo '<script type="text/javascript">';
-echo ' alert("Thanks for registration")';  //not showing an alert box.
-echo '</script>';
-}
-
-?>
+                
               </div>
                <div class="col-md-3 col-lg-3">
                 

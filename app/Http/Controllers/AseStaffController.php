@@ -15,7 +15,8 @@ use Image;
 use Helpers;
 use Redirect;
 use DB;
-use Illuminate\Support\Facades\Mail;
+use Response;
+use Mail;
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ use Illuminate\Http\Request;
 
 class AseStaffController extends Controller
 {
-    
+    //->with('controller',$this->controller)
     public function index()
     {
         $data =anant_school_stafflist::where('isActive', 1)->select('EmployeeNumber')->get();
@@ -54,20 +55,32 @@ class AseStaffController extends Controller
             
     }
     public function staffotp($id)
-    {
-       $data =anant_school_stafflist::where('EmployeeNumber', $id)->select('emailaddress')->get()->toArray();
+    {/*
+       $record =anant_school_stafflist::where('EmployeeNumber', $id)->select('emailaddress')->get()->toArray();
 
+    
+        $data['title'] = "This is Test Mail Tuts Make";
+ 
+        Mail::send('front.home', $data, function($message) {
+ 
+            $message->to('it@sanskardham.org', 'Receiver Name')
+ 
+                    ->subject('Tuts Make Mail');
+        });
+ 
+        if (Mail::failures()) {
+            echo "Sorry! Please try again latter";
+           //return response()->Fail('Sorry! Please try again latter');
+         }else{
+            echo "Great! Successfully send in your mail";
+           //return response()->success('Great! Successfully send in your mail');
+         }
+    
 
-        Mail::to($request->input('email'))->send(new SendMail());
-        return redirect()->back()->with('success', 'Email sent successfully. Check your email.');
+         exit();
 
+    */
 
-       
-        if(!empty($data)){
-            return $data[0]['Name'];    
-        }else{
-            return '';
-        }
     }
     //studet
     public function student()
@@ -123,15 +136,11 @@ class AseStaffController extends Controller
         $eventrecord->GRNumber = $grno[0]['Gr_No'];
         $eventrecord->MobileNo = $request->mobile;
         if($eventrecord->save())
-        {
-            $successmessage ='Thanks for registration';
-           
-            return view('front.home')->with('successmessage',$successmessage);
+        {   
+            $eventrec = anant_school_student_event::latest()->first()->toArray();
+            $successmessage =' Thanks for Registration Your Participate No is '.$eventrec['participet_no'];
+            return Redirect::to("/")->with('success',$successmessage );
         }
-        /*$x=$eventrecord->participet_no;
-        echo $x;*/
        
-       
-        //return view('front.studentlist')->with('studentlist',$studentlist)->with('eventname',$eventname);
     }
 }
