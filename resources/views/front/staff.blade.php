@@ -9,13 +9,14 @@
                
             </div>
               <div >
-                  <form >
+                  <form action="{{asset('/otp/verify')}}" method="post" >
+                    {{ csrf_field() }}
                     <div class="col-md-5 col-lg-5 col-sm-12" style="padding: 20px;">                
                       <div class="form-group">
-                          <select class="form-control form-control-lg" id="employeenumber" onChange="getName();">
+                          <select class="form-control form-control-lg" id="employeenumber" onChange="getName();" name="id">
                             <option value=" ">Employee Number</option>
                             <?php foreach ($stafflist as $key => $value) { ?>
-                              <option value="{{$value->EmployeeNumber}}">{{$value->EmployeeNumber}}</option>
+                              <option value="{{$value->id}}">{{$value->EmployeeNumber}}</option>
                             <?php } ?>                           
                           </select>
                       </div> 
@@ -26,7 +27,28 @@
                       </div>
                     </div>
                     <div class="col-md-2 col-lg-2 col-sm-12" style="padding: 20px;">
-                      <button type="button" onclick="getotp()" class="btn btn-primary mb-2">Get Otp</button>
+                      <button type="button" onclick="getotp()" class="btn btn-warning mb-2">Get Otp</button>
+                    </div>
+                    @if ($message = Session::get('error'))
+            <div class="col-md-12" >
+                <div class="box-body">
+                    <div class="alert alert-error alert-danger">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">X</button>
+                        <h4><i class="icon fa fa-check"></i> {{ $message }}</h4>
+                        
+                    </div>
+                </div>
+            </div>
+        @endif
+                    <div class="col-md-5 col-lg-5 col-sm-12" style="padding: 20px;">
+                      <div class="form-group">
+                        <input type="number" class="form-control" id="otp" aria-describedby="" placeholder="OTP" name="otp" min="99999" max="1000000" required >
+                      </div>
+                    </div>
+                    <div class="col-md-5 col-lg-5 col-sm-12" style="padding: 20px;">
+                      <div class="form-group">
+                        <button type='submit' class='btn btn-success btn-block'>Submit</button>
+                      </div>
                     </div>
                   </form>
               </div>
@@ -58,7 +80,7 @@
     { 
       var sel = document.getElementById('employeenumber').value;
       //alert(sel);
-      if(sel==' '){
+      if(sel==''){
         alert("please select your Employee Number");
       }
       else{
@@ -73,7 +95,7 @@
                       },
                success:function(data) {
                 if(data){
-                  document.getElementById('name').value = data;  
+                  alert(data); 
                 }else{
                   alert('Data missing');
                 }
