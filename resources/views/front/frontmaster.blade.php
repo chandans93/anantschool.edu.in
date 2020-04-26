@@ -19,12 +19,17 @@
 <link rel="stylesheet" href="{{ asset('/css/main.css')}}">
 <link rel="stylesheet" href="{{ asset('/css/responsive.css')}}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<style type="text/css">
 
-    
+<style type="text/css">
 img {
   max-width: 100%;
   height: auto;
+}
+table, th, td, tr {
+  border: 2px solid white;
+}
+th, td, tr {
+  padding: 15px;
 }
 
 </style>

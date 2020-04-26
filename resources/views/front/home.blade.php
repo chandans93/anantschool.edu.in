@@ -21,12 +21,12 @@
                <div class="col-md-3 col-lg-3">
                 
               </div>
-               <div class="col-md-6 col-lg-6">
-                <a  href="/cronaevent"><img src="{{ asset('/images/crona.png')}}" /></a>
+               <div class="col-md-3 col-lg-3">
+               <a  href="/class11"><img src="{{ asset('/images/sap.png')}}" /></a>
               </div>
-               <!--<div class="col-md-3 col-lg-3">
+              <div class="col-md-3 col-lg-3">
                 <a  target="_blank" href="https://g21.digialm.com//EForms/configuredHtml/1723/59041/Registration.html"><img src="{{ asset('/images/foa2021.gif')}}" /></a> 
-              </div>-->
+              </div>
           </div>
       </div>
   </div>
