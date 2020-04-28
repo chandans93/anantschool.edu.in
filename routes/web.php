@@ -40,6 +40,10 @@ Route::get('/class11/science', array('as' => '.class11.science', 'uses' => 'AseS
 Route::get('/class11/commerce', array('as' => '.class11.commerce', 'uses' => 'AseStaffController@classcommerce'));
 Route::get('/class11/arts', array('as' => '.class11.arts', 'uses' => 'AseStaffController@classarts')); 
 Route::post('/student/class11/submit', array('as' => '.student.class11.submit', 'uses' => 'AseStaffController@class11formsubmit'));
+Route::get('/contact', array('as' => '.contact', 'uses' => 'AseStaffController@contact')); 
+Route::post('/content/submit', array('as' => '.content.submit','uses'=>'AseStaffController@contentsubmit'));
+
+
 
 
 

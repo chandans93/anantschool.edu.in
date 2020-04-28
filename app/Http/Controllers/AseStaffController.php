@@ -686,5 +686,34 @@ class AseStaffController extends Controller
         }
        
     }
+    public function contact()
+    {
+        return view('front.contact');
+    }
+
+    public function contentsubmit(Request $req)
+    {
+        
+        $mail = new SMTPMailer();
+        $mail->addTo('info@anantschool.edu.in');
+        $mail->AddReplyTo($req->email);
+        $mail->AddCC($req->email);
+        $mail->AddCC('principal@anantschool.edu.in');
+        $mail->Subject($req->Subject.'@mail from anantschool.edu.in');
+        $mail->Body(
+            '<p>Dear Principal Sir</p>
+            <p>Anant School of Excellence</p>
+            <p>'.$req->message.'</p>
+            <p> From '.$req->name.'</p>');
+        if($mail->Send()){
+
+            $successmessage ='Dear '.$req->name.' Thanks for being awesome! We have received your message and would like to thank you for writing to us. If your inquiry is urgent, please use the telephone number listed below to talk to one of our staff members. Otherwise, we will reply by email as soon as possible.';
+        return Redirect::to("/")->with('success',$successmessage );
+
+        }
+        
+    }
     
 }
+
+

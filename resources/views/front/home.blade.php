@@ -14,7 +14,7 @@
             </div>
         </div>
         @endif
-          <div class="row">
+        <!-- <div class="row">
               <div class="col-md-3 col-lg-3 ">
                 
               </div>
@@ -27,14 +27,13 @@
               <div class="col-md-3 col-lg-3">
                 <a  target="_blank" href="https://g21.digialm.com//EForms/configuredHtml/1723/59041/Registration.html"><img src="{{ asset('/images/foa2021.gif')}}" /></a> 
               </div>
-          </div>
+          </div> -->
       </div>
   </div>
 <div class="container">
 <div class="row">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-12 ">
      <div class="banner-text text-center">
-        
         <b class="logo">Anant School of Excellence</b>
           <div class="type-wrap">
                <div id="typed-strings">
@@ -47,6 +46,16 @@
      </div>
 </div>
 </div>
+</div >
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+     <div style="padding: 45px">
+        
+     </div>
 </div>
+</div>
+</div >
 @stop
 
