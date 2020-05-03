@@ -87,7 +87,9 @@ th, td, tr {
                 <li><a href="blog-archive.html">Blog Archive</a></li>                
                 <li><a href="blog-single.html">Blog Single</a></li>                
               </ul>
-            </li> -->           
+            </li> -->
+            <li class=" <?php if (request()->path() == 'tatacl') {echo 'active';}?>">
+              <a href="{{ asset('/tatacl')}}">Tata Classedge Online</a></li>          
             <li class=" <?php if (request()->path() == 'contact') {echo 'active';}?>">
               <a href="{{ asset('/contact')}}">Contact</a></li>              
           </ul>                     
@@ -123,7 +125,7 @@ th, td, tr {
                     <li><a target="_blank" href="http://www.sanskardham.org/txt.php?pgid=1698">Sanskardham</a></li>
                     <li><a target="_blank" href="https://www.gmisschool.org">Global Mission International School</a></li>
                     <li><a target="_blank" href="https://www.lgs.edu.in">Laxman Gyanpith  School </a></li>
-                    <li><a target="_blank" href="https://www.facebook.com/ASESchool.Ahmedabad" class="facebook"><i class="fa fa-facebook"></i> Anant School of Excellence facebook link</a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/ASESchool.Ahmedabad" class="facebook"><i class="fa fa-facebook-square fa-6" style="font-size: 30px"></i> Anant School of Excellence</a></li>
                   </ul>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-3">

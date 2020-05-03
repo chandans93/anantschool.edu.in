@@ -713,6 +713,12 @@ class AseStaffController extends Controller
         }
         
     }
+
+    public function tataclassedgeonline()
+    {
+        return redirect('http://learnedge.tataclassedgeonline.com/web/guest?cmode=0&p_p_id=58&p_p_lifecycle=0&_58_redirect=%2Fgroup%2Flearnedge%2Fstudent-home');
+             
+    }
     
 }
 

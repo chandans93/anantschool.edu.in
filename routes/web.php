@@ -42,6 +42,8 @@ Route::get('/class11/arts', array('as' => '.class11.arts', 'uses' => 'AseStaffCo
 Route::post('/student/class11/submit', array('as' => '.student.class11.submit', 'uses' => 'AseStaffController@class11formsubmit'));
 Route::get('/contact', array('as' => '.contact', 'uses' => 'AseStaffController@contact')); 
 Route::post('/content/submit', array('as' => '.content.submit','uses'=>'AseStaffController@contentsubmit'));
+Route::get('/contact', array('as' => '.contact', 'uses' => 'AseStaffController@contact')); 
+Route::get('/tatacl', array('as' => '.tatacl', 'uses' => 'AseStaffController@tataclassedgeonline')); 
 
 
 
