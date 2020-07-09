@@ -59,8 +59,9 @@
                         <div class="form-group">  
                            <select class="form-control" name="schoolch" required>
                                 <option value="">Select</option>
-                                <option value="guj">State</option>
-                                <option value="cbse">CBSE.</option>
+                                <option value="guj">GSEB</option>
+                                <option value="cbse">CBSE</option>
+                                <option value="other">Other</option>
                             </select>                           
                         </div> 
                       </div>              

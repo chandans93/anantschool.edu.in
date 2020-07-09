@@ -80,7 +80,7 @@ th, td, tr {
                 <li><a href="{{ asset('/class11')}}">class XI</a></li>                
               </ul>
             </li>           
-            <li><a target="_blank" href="https://g21.tcsion.com//per/g21/pub/1723/SelfServices/templates/sdham15012018101517/Sdham515012018101605.html">Existing Parent Login</a></li>
+            <li><a href="https://g21.tcsion.com//per/g21/pub/1723/SelfServices/templates/sdham04052020110656/sdham/sdham_new504052020110806.html">Existing Parent Login</a></li>
             <!--<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
